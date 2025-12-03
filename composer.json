@@ -1,0 +1,33 @@
+{
+    "name": "bugo/pexels-laravel",
+    "description": "Laravel Pexels API integration with rate limiting",
+    "keywords": [
+        "pexels laravel",
+        "pexels api service"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bugo",
+            "email": "bugo@dragomano.ru"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11|^12",
+        "devscast/pexels": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bugo\\PexelsLaravel\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bugo\\PexelsLaravel\\PexelsServiceProvider"
+            ]
+        }
+    }
+}
