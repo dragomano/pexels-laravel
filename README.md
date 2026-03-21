@@ -12,8 +12,8 @@ A Laravel package for integrating Pexels API with built-in rate limiting, cachin
 
 ## Requirements
 
-- PHP 8.2 or higher
-- Laravel 11.x or 12.x
+- PHP 8.2+
+- Laravel 11+
 
 ## Installation
 
