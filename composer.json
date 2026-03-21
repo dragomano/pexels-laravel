@@ -15,19 +15,43 @@
     ],
     "require": {
         "php": "^8.2",
-        "illuminate/support": "^11|^12",
+        "illuminate/support": "^11|^12|^13",
         "devscast/pexels": "^1.1"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^10.0|^11.0",
+        "pestphp/pest": "^3.8|^4.4",
+        "pestphp/pest-plugin-laravel": "^3.2",
+        "rector/rector": "^2.3"
     },
     "autoload": {
         "psr-4": {
             "Bugo\\PexelsLaravel\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "check": "vendor/bin/rector process --dry-run --clear-cache",
+        "test": "vendor/bin/pest --colors=always",
+        "test-coverage": "vendor/bin/pest --colors=always --coverage --min=100",
+        "test-coverage-clover": "vendor/bin/pest --colors=always --min=100 --coverage-clover coverage.xml",
+        "test-coverage-html": "vendor/bin/pest --colors=always --min=100 --coverage-html coverage"
+    },
     "extra": {
         "laravel": {
             "providers": [
                 "Bugo\\PexelsLaravel\\PexelsServiceProvider"
             ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
         }
     }
 }
