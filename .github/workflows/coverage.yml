@@ -30,6 +30,7 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
+          extensions: mbstring, curl, xml, zip, gd, sqlite3, pdo_sqlite, fileinfo, bcmath, intl, opcache
           coverage: ${{ matrix.os == 'ubuntu-latest' && matrix.php == '8.5' && 'xdebug' || 'none' }}
 
       - name: Install dependencies
